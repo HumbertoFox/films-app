@@ -1,4 +1,4 @@
-import styles from '@/app/components/styles/pages.module.css';
+import styles from '../styles/pages.module.css';
 
 export default function NavBar() {
     return (

@@ -1,8 +1,15 @@
 .main {
   max-width: 1440px;
-  min-height: 100vh;
+  min-height: calc(100vh - 53px);
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+}
+
+
+@media (max-width: 1440px) {
+  .main {
+    padding: 0 20px;
+  }   
 }
