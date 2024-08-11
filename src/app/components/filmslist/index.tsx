@@ -30,9 +30,9 @@ export default function FilmsList() {
     
     if (loading) {
         return (
-            <div className={styles.film_list}>
+            <section className={styles.film_list}>
                 <ReactLoading type='spin' color='#6046FF' height={'20%'} width={'20%'} />
-            </div>
+            </section>
         );
     };
     return (

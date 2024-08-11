@@ -31,14 +31,14 @@
     overflow: hidden;
 }
 
-.film_infor {
+.film_info {
     position: absolute;
     width: 100%;
     height: 200px;
     bottom: 0;
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: flex-end;
     padding: 10px;
     background: linear-gradient(#00000000, #000000 90%);
     cursor: pointer;

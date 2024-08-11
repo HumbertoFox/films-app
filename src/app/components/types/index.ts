@@ -13,3 +13,7 @@ export interface Props {
 export interface FilmResponse {
     results: Film[];
 };
+
+export interface PropsFilms {
+    film: Film
+};
