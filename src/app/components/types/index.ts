@@ -7,7 +7,7 @@ export interface Film {
 };
 
 export interface Props {
-    rating: number
+    ranking: number
 };
 
 export interface FilmResponse {
