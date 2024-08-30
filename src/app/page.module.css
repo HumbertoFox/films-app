@@ -1,15 +1,21 @@
 .main {
   max-width: 1440px;
-  min-height: calc(100vh - 59px);
-  top: 59px;
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 10px auto;
+  margin: 0 auto;
 }
 
 @media (max-width: 1440px) {
   .main {
     padding: 0 20px;
   }   
+}
+
+@media (max-width: 480px) {
+  .main {
+    width: 375px;
+  }
 }

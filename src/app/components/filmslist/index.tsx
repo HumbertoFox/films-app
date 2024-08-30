@@ -1,33 +1,32 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { Film } from '../types';
+import { Film, Pages } from '../types';
 import { getFilmes } from '@/app/services/api';
 import ReactLoading from 'react-loading';
 import FilmCard from '../filmscard';
 import styles from '../styles/pages.module.css';
 
-export default function FilmsList() {
+export default function FilmsList({ page }: Pages) {
     const [films, setFilms] = useState<Film[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
 
-    const fetchFilms = async () => {
-        setLoading(true);
-        setError(null);
-        try {
-            const data = await getFilmes();
-            setFilms(data.results);
-        } catch (error) {
-            setError('Erro ao buscar filmes');
-        } finally {
-            setLoading(false);
-        };
-    };
-
     useEffect(() => {
+        const fetchFilms = async () => {
+            setLoading(true);
+            setError(null);
+            try {
+                const data = await getFilmes(page);
+                setFilms(data.results);
+            } catch (error) {
+                setError('Erro ao buscar filmes');
+            } finally {
+                setLoading(false);
+            };
+        };
         fetchFilms();
-    }, []);
-    
+    }, [setFilms, page]);
+
     if (loading) {
         return (
             <section className={styles.film_list}>

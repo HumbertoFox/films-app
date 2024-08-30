@@ -1,4 +1,7 @@
 .navbar {
+    position: fixed;
+    width: 100vw;
+    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -10,10 +13,12 @@
     color: #FFF;
     filter: drop-shadow(0 0 2px #F3EB00);
     cursor: default;
+    transition: all .4s ease-in-out;
 }
 
 .navbar svg {
     width: 35px;
+    font-size: 35px;
     cursor: pointer;
     transition: all .4s ease-in-out;
     filter: drop-shadow(0 0 2px #6046FF);
@@ -21,4 +26,22 @@
 
 .navbar svg:hover {
     color: #6046FF;
+}
+
+.navbar svg.cursoroff {
+    cursor: no-drop;
+    filter: drop-shadow(0 0 0);
+}
+
+.navbar svg.cursoroff:hover {
+    color: black;
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        min-width: 375px;
+    }
+    .navbar h1 {
+        font-size: 18px;
+    }
 }

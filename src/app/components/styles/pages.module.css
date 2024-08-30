@@ -2,6 +2,7 @@
     display: flex;
     gap: 4px;
     color: #F3EB00;
+    transition: all .4s ease-in-out;
 }
 
 .films_list {
@@ -9,6 +10,9 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 16px;
+    padding: 10px 0;
+    margin-top: 59px;
+    transition: all .4s ease-in-out;
 }
 
 .film_card {
