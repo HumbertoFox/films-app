@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Film } from '../types';
 import { getFilmes } from '@/app/services/api';
 import ReactLoading from 'react-loading';
-import FilmCard from '../filmscard/page';
+import FilmCard from '../filmscard';
 import styles from '../styles/pages.module.css';
 
 export default function FilmsList() {

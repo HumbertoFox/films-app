@@ -1,5 +1,5 @@
 import { PropsFilms } from '../types';
-import StarRating from '../starrating/page';
+import StarRating from '../starrating';
 import styles from '../styles/pages.module.css';
 import Image from 'next/image';
 
