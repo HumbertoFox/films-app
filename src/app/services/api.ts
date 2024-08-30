@@ -14,7 +14,7 @@ export const getFilmes = async (): Promise<FilmResponse> => {
         });
         return response.data;
     } catch (error) {
-        console.error("Erro ao buscar filmes:", error);
+        console.error('Erro ao buscar filmes:', error);
         throw error;
     };
 };

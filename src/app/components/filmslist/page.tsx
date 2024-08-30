@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Film } from '../types';
 import { getFilmes } from '@/app/services/api';
 import ReactLoading from 'react-loading';
-import FilmCard from '../filmscard';
+import FilmCard from '../filmscard/page';
 import styles from '../styles/pages.module.css';
 
 export default function FilmsList() {
@@ -31,7 +31,7 @@ export default function FilmsList() {
     if (loading) {
         return (
             <section className={styles.film_list}>
-                <ReactLoading type='spin' color='#6046FF' height={'20%'} width={'20%'} />
+                <ReactLoading type='spin' color='#6046FF' height={100} width={100} />
             </section>
         );
     };

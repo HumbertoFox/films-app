@@ -1,4 +1,4 @@
-import FilmsList from "./components/filmslist";
+import FilmsList from "./components/filmslist/page";
 import styles from "./page.module.css";
 
 export default function Home() {

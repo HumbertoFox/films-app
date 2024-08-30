@@ -1,12 +1,12 @@
 .main {
   max-width: 1440px;
-  min-height: calc(100vh - 53px);
+  min-height: calc(100vh - 59px);
+  top: 59px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 10px auto;
 }
-
 
 @media (max-width: 1440px) {
   .main {
