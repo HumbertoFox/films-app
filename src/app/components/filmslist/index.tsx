@@ -6,7 +6,7 @@ import ReactLoading from 'react-loading';
 import FilmCard from '../filmscard';
 import styles from '../styles/pages.module.css';
 
-export default function FilmsList({ page }: Pages) {
+export default function FilmsList({ page, totalpages }: Pages) {
     const [films, setFilms] = useState<Film[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
@@ -18,6 +18,7 @@ export default function FilmsList({ page }: Pages) {
             try {
                 const data = await getFilmes(page);
                 setFilms(data.results);
+                totalpages(data.total_pages);
             } catch (error) {
                 setError('Erro ao buscar filmes');
             } finally {
@@ -25,7 +26,7 @@ export default function FilmsList({ page }: Pages) {
             };
         };
         fetchFilms();
-    }, [setFilms, page]);
+    }, [setFilms, page, totalpages]);
 
     if (loading) {
         return (

@@ -14,7 +14,6 @@ export interface Props {
 export interface FilmResponse {
     page: number;
     results: Film[];
-    total_results: number;
     total_pages: number;
 };
 
@@ -24,10 +23,12 @@ export interface PropsFilms {
 
 export interface Pages {
     page: number;
+    totalpages: any;
 }
 
 export interface NavBarProps {
     page: number;
+    totalpages: number;
     onIncrement: () => void;
     onDecrement: () => void;
 };
