@@ -7,6 +7,7 @@
 
 .films_list {
     width: 100%;
+    position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 16px;
@@ -33,7 +34,7 @@
     justify-content: flex-end;
     padding: 10px;
     background: linear-gradient(#00000000, #000000 90%);
-    cursor: pointer;
+    cursor: default;
 }
 
 .film_card:hover img {
@@ -51,7 +52,6 @@
     object-fit: cover;
     opacity: 1;
     transition: all .6s ease-in-out;
-    cursor: pointer;
 }
 
 .film_title {

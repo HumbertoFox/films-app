@@ -5,11 +5,16 @@ import { getFilmes } from '@/app/services/api';
 import ReactLoading from 'react-loading';
 import FilmCard from '../filmscard';
 import styles from '../styles/pages.module.css';
+import DetailsClick from '../modal';
 
 export default function FilmsList({ page, totalpages }: Pages) {
     const [films, setFilms] = useState<Film[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
+    const [detailsFilm, setDetailsFilm] = useState<Film | null>(null);
+    const handleDetailsFilmClose = () => {
+        setDetailsFilm(null);
+    };
 
     useEffect(() => {
         const fetchFilms = async () => {
@@ -42,8 +47,10 @@ export default function FilmsList({ page, totalpages }: Pages) {
                 <FilmCard
                     key={film.id}
                     film={film}
+                    onDetailsClick={() => setDetailsFilm(film)}
                 />
             ))}
+            {detailsFilm && <DetailsClick {...detailsFilm} onClose={handleDetailsFilmClose} />}
         </section>
     );
 };

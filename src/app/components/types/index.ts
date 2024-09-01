@@ -4,7 +4,7 @@ export interface Film {
     overview: string;
     release_date: string;
     poster_path: string;
-    vote_average: number,
+    vote_average: number;
 };
 
 export interface Props {
@@ -19,6 +19,7 @@ export interface FilmResponse {
 
 export interface PropsFilms {
     film: Film;
+    onDetailsClick: () => void;
 };
 
 export interface Pages {
@@ -32,3 +33,7 @@ export interface NavBarProps {
     onIncrement: () => void;
     onDecrement: () => void;
 };
+
+export interface DetailsFilm extends Film {
+    onClose?: () => void;
+}
