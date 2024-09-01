@@ -1,22 +1,31 @@
 'use client';
+import { useState } from 'react';
 import { DetailsFilm } from '../types';
+import ReactLoading from 'react-loading';
 import StartRanking from '../startranking';
 import Image from 'next/image';
 import styles from './details.module.css';
 
 export default function DetailsClick({ id, overview, poster_path, title, release_date, vote_average, onClose }: DetailsFilm) {
+    const [loading, setLoading] = useState<boolean>(true);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
     return (
         <section className={styles.section_details}>
             <div className={styles.div_section}>
-                <Image src={`https://image.tmdb.org/t/p/original${poster_path}`} width={500} height={700} alt={`Image do Filme ${title}`} />
+                <div className={styles.div_img}>
+                    <Image src={`https://image.tmdb.org/t/p/original${poster_path}`} width={500} height={500} alt={`Image do Filme ${title}`} onLoad={() => { setLoading(false) }} />
+                    {loading && <div className={styles.loading}><ReactLoading type='spin' color='#6046FF' height={100} width={100} /></div>}
+                </div>
                 <div className={styles.div_info}>
-                    <p>{title}<span>{id}</span></p>
-                    {vote_average > 0 && <StartRanking ranking={vote_average} />}
-                    <p>{release_date}</p>
+                    <p><strong>Id: </strong>{id}</p>
+                    <p><strong>Título: </strong>{title}</p>
+                    <p><strong>Lançamento: </strong>{release_date}</p>
+                    {vote_average > 0 && <strong className={styles.strong_assessment}>Avaliação:<StartRanking ranking={vote_average} /></strong>}
                     <div>
-                        {overview && <p>{overview}</p>}
+                        {overview && <p className={styles.p_synopsis}><strong>Sinopse: </strong>{overview}</p>}
                     </div>
-                    <button type='button' title='Fechar Detalhues' onClick={onClose}>Fechar</button>
+                    <button type='button' title='Fechar Detalhes' onClick={onClose}>Fechar</button>
                 </div>
             </div>
         </section>
