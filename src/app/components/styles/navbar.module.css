@@ -43,6 +43,7 @@
         min-width: 375px;
     }
     .navbar h1 {
-        font-size: 18px;
+        font-size: 13px;
+        text-align: center;
     }
 }
