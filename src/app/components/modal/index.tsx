@@ -8,6 +8,8 @@ import styles from './details.module.css';
 
 export default function DetailsClick({ id, overview, poster_path, title, release_date, vote_average, onClose }: DetailsFilm) {
     const [loading, setLoading] = useState<boolean>(true);
+    const [year, month, day] = release_date.split('-');
+    const formattedDate = `${day}/${month}/${year}`;
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
     return (
@@ -20,7 +22,7 @@ export default function DetailsClick({ id, overview, poster_path, title, release
                 <div className={styles.div_info}>
                     <p><strong>Id: </strong>{id}</p>
                     <p><strong>Título: </strong>{title}</p>
-                    <p><strong>Lançamento: </strong>{release_date}</p>
+                    <p><strong>Lançamento: </strong>{formattedDate}</p>
                     {vote_average > 0 && <strong className={styles.strong_assessment}>Avaliação:<StartRanking ranking={vote_average} /></strong>}
                     <div>
                         {overview && <p className={styles.p_synopsis}><strong>Sinopse: </strong>{overview}</p>}
