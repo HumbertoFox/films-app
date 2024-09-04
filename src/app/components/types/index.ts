@@ -24,7 +24,7 @@ export interface PropsFilms {
 
 export interface Pages {
     page: number;
-    totalpages: any;
+    totalpages: number | any;
 }
 
 export interface NavBarProps {
