@@ -10,7 +10,6 @@ export default function DetailsClick({ id, overview, poster_path, title, release
     const [loading, setLoading] = useState<boolean>(true);
     const [year, month, day] = release_date.split('-');
     const formattedDate = `${day}/${month}/${year}`;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
 
     return (
         <section className={styles.section_details}>

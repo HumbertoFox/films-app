@@ -1,9 +1,12 @@
 .section_details {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #FFF;
     background: rgba(255, 255, 255, 0.1);
     -webkit-backdrop-filter: blur(10px);
@@ -13,7 +16,6 @@
 
 .div_section {
     width: 100%;
-    max-height: 100vh;
     display: flex;
     justify-content: center;
     gap: 50px;
